@@ -8,9 +8,10 @@ First, it has been updated to use [jQuery](https://www.npmjs.com/package/jquery)
 
 ## Installation
 
-The installation uses `webpack` to bundle the node.js code for the web pages and `docco` to generate the documentation.
+The installation uses `less` and `webpack` to bundle the node.js code for the web pages and `docco` to generate the documentation.
 ````
 npm install -g webpack@2.3.3
+npm install -g less@2.7.1
 npm install -g docco@0.7.0
 ````
 
@@ -60,6 +61,7 @@ can be popped up from **apg.html** (see the Trace Help) or can be run stand-alon
 ````
 js/tree-save.js
 ````
+can assist in getting the data in the right format. See the [examples](https://github.com/ldthomas/apg-js2-examples/tree/master/apg-html)
 
 ### Copyright
   *Copyright &copy; 2017 Lowell D. Thomas, all rights reserved*  
