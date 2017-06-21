@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>apg.html</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/apg-html.css">
+    <script src="./build/apg-html-bundle.js"></script>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function() {
+        apgHtml.onPageLoad();
+      });
+    </script>
+    <div class="center-div">
+
+      <!-- ##### BEGIN Header ##### -->
+      <div id="header">
+        <div class="super-header"></div>
+        <div class="mid-header">
+          <a id="headerLink" href="https://github.com/ldthomas/apg-js2" target="_blank">JavaScript <strong>APG</strong>
+          </a>
+        </div>
+        <div class="sub-header">
+          <div class="band-container">
+            | <a class="tablinks" href="javascript:void(0)" title="type or paste SABNF grammar here">Generator</a> | <a
+                class="tablinks" href="javascript:void(0)" title="annotated display of SABNF grammar">Grammar</a> | <a class="tablinks"
+                href="javascript:void(0)" title="rules defined by the SABNF grammar">Rules</a> | <a class="tablinks"
+                href="javascript:void(0)" title="the grammar rules attributes">Attributes</a> | <a class="tablinks"
+                href="javascript:void(0)" title="the generated parser">Parser</a> |
+            <div class="float-right">
+              | <a class="tablinks" href="javascript:void(0)">About</a> | 
+              <a class="tablinks" href="javascript:void(0)">Help |</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ##### END Header ##### -->
+
+
+      <!-- ##### BEGIN Main Copy ##### -->
+      <div class="main-container">
+
+        <!-- #### BEGIN tab 0 - the parser generator #### -->
+        <div class="tabcontent">
+
+          <!-- #### Parser Generator GUI #### -->
+          <div class="copy-header">
+            <div id="generate-holder" class="band-container">
+              | <a id="generate" href="javascript:void(0)" >Generate</a> 
+              | <a id="generate-select" href="javascript:void(0)" >Copy</a>
+              | <a id="generate-full" href="javascript:void(0)" >Full Screen</a> |
+            </div>
+          </div>
+          <article id="generator" class="section">
+            <div class="main-copy">
+              <textarea id="grammar-area" spellcheck="false" placeholder="Type or paste SABNF grammar here."></textarea>
+            </div>
+
+
+          </article>
+          <!--         <div class="copy-header"> -->
+          <!--           <div class="band-container"> -->
+          <!--             Generator -->
+          <!--           </div> -->
+          <!--         </div> -->
+        </div>
+        <!-- #### END tab 0 - the parser generator #### -->
+
+        <!-- ####  BEGIN tab 1 - the annotated SABNF grammar, with errors if any #### -->
+        <div class="tabcontent">
+          <div class="copy-header">
+            <div class="band-container">
+              | <a id="grammar-full" href="javascript:void(0)" >Full Screen</a> |
+            </div>
+          </div>
+          <div class="main-copy">
+            <article id="grammar-page"></article>
+          </div>
+          <!--         <div class="copy-header"> -->
+          <!--           <div class="band-container"> -->
+          <!--             Grammar -->
+          <!--           </div> -->
+          <!--         </div> -->
+        </div>
+        <!-- ####  END tab 1 - the annotated SABNF grammar, with errors if any #### -->
+
+        <!-- ####  BEGIN tab 2 - the grammar rules with dependencies #### -->
+        <div class="tabcontent">
+          <div class="copy-header">
+            <div class="band-container">
+              | <a id="rules-show" class="inner-header" href="javascript:void(0)" >Show All</a> 
+              | <a id="rules-hide" class="inner-header" href="javascript:void(0)" >Hide All</a> 
+              | <a id="rules-full" class="inner-header" href="javascript:void(0)" >Full Screen</a> |
+            </div>
+          </div>
+          <div class="main-copy">
+            <article id="rules-page"></article>
+          </div>
+        </div>
+        <!-- ####  END tab 2 - the grammar rules with dependencies #### -->
+
+        <!-- ####  BEGIN tab 3 - the grammar attributes #### -->
+        <div class="tabcontent">
+          <div class="copy-header">
+            <div class="band-container">
+              | <a id="attrs-full" class="inner-header" href="javascript:void(0)">Full Screen</a> |
+            </div>
+          </div>
+          <div class="main-copy">
+            <article id="attrs-page"></article>
+          </div>
+        </div>
+        <!-- ####  END tab 3 - the grammar attributes #### -->
+
+        <!-- ####  BEGIN tab 4 - the generated parser with a GUI for testing it with an input string #### -->
+        <div class="tabcontent">
+          <div class="copy-header">
+            <div id="parser-tabs" class="band-container">
+              | <a class="parser-tablinks" href="javascript:void(0)" >Parser</a> 
+              | <a class="parser-tablinks" href="javascript:void(0)" >Configure</a> 
+              | <a class="parser-tablinks" href="javascript:void(0)" >Input</a> 
+              | <a class="parser-tablinks" href="javascript:void(0)" >Phrases</a>
+              | <a class="parser-tablinks" href="javascript:void(0)" >State</a> 
+              | <a class="parser-tablinks" href="javascript:void(0)" >Stats</a> 
+              | <a class="parser-tablinks" href="javascript:void(0)" >Trace</a> |
+            </div>
+          </div>
+          <article id="parser">
+
+            <!-- #### the parser tabs #### -->
+            <!-- #### the parser tabs #### -->
+
+            <!-- #### parser tab 0 - the JS parser object #### -->
+            <section class="parser-tabcontent">
+              <div class="copy-header">
+                <div class="sub-band-container">
+                  | <a id="parser-copy" class="inner-header" href="javascript:void(0)">Copy</a> 
+                  | <a id="parser-full" class="inner-header" href="javascript:void(0)">Full Screen</a> |
+                </div>
+              </div>
+              <div class="main-copy">
+                <textarea id="parser-area" spellcheck="false"></textarea>
+              </div>
+            </section>
+
+            <!-- #### parser tab 1 - input and trace configuration #### -->
+            <section class="parser-tabcontent">
+              <div class="main-copy">
+                <div class="form-content">
+                  <!--  this section is not manipulated dynamically -->
+
+                  <p>
+                    <strong>Input Mode:</strong>
+                  </p>
+                  <p>
+                    &nbsp;&nbsp;<label><input type="radio" name="input-mode" value="auto" checked> auto</label><br />
+                    &nbsp;&nbsp;<label><input type="radio" name="input-mode" value="ascii"> ASCII characters only</label><br>
+                    &nbsp;&nbsp;<label><input type="radio" name="input-mode" value="escaped"> escaped characters</label>
+                  </p>
+
+                  <!--  this section is not manipulated dynamically -->
+                  <p>
+                    <strong>Trace:</strong>
+                    <label><input type="radio" name="traceon" value="on"> on</label>
+                    <label><input type="radio" name="traceon" value="off" checked> off</label>
+                  </p>
+                  <div id="trace-config" class=" hide">
+                    <table>
+                      <tr>
+                        <th colspan="2" >Display Mode</th>
+                      </tr>
+                      <tr>
+                        <td><label><input type="radio" name="trace-display" value="ascii" checked> ASCII</label></td>
+                        <td><label><input type="radio" name="trace-display" value="hexidecimal"> hexidecimal</label></td>
+                      </tr>
+                      <tr>
+                        <td><label><input type="radio" name="trace-display" value="decimal"> decimal</label></td>
+                        <td><label><input type="radio" name="trace-display" value="unicode"> Unicode</label></td>
+                      </tr>
+                    </table>
+                    <p>
+                      <strong>Records to Display:</strong>
+                    </p>
+                    <p>
+                      <input type="text" id="trace-max-records" value="5000"> max records
+                    </p>
+                    <p>
+                      <input type="text" id="trace-last-record" value="-1"> last record
+                    </p>
+                    <!--  this section is not manipulated dynamically -->
+                    <p>
+                      <strong>Operator Nodes:</strong>
+                      <label><input type="radio" name="operatorson" value="on">all</label>
+                      <label><input type="radio" name="operatorson" value="off" checked> none</label>
+                    </p>
+                    <table>
+                      <tr>
+                        <td><label><input type="checkbox" name="operators" value="alt"><span> ALT (/)</span> alternate</label></td>
+                        <td><label><input type="checkbox" name="operators" value="cat"><span> CAT ( )</span> concatenation</label></td>
+                        <td><label><input type="checkbox" name="operators" value="rep"><span> REP (*)</span> repetition</label></td>
+                        <td><label><input type="checkbox" name="operators" value="abg"><span> ABG (%^)</span> begin of string</label></td>
+                      </tr>
+                      <tr>
+                        <td><label><input type="checkbox" name="operators" value="tls"><span> TLS ("abc")</span> literal string</label></td>
+                        <td><label><input type="checkbox" name="operators" value="tbs"><span> TBS (%d33.34)</span> binary string</label></td>
+                        <td><label><input type="checkbox" name="operators" value="trg"><span> TRG (%d33-34)</span> character range</label></td>
+                        <td><label><input type="checkbox" name="operators" value="aen"><span> AEN (%$)</span> end of string</label></td>
+                      </tr>
+                      <tr>
+                        <td><label><input type="checkbox" name="operators" value="and"><span> AND (&amp;)</span> positive look ahead</label></td>
+                        <td><label><input type="checkbox" name="operators" value="not"><span> NOT (!)</span> negative look ahead</label></td>
+                        <td><label><input type="checkbox" name="operators" value="bka"><span> BKA (&amp;&amp;)</span> positive look behind</label></td>
+                        <td><label><input type="checkbox" name="operators" value="bkn"><span> BKN (!!)</span> negative look behind</label></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td><label><input type="checkbox" name="operators" value="bkr"><span> BKR (\)</span> back reference</label></td>
+                      </tr>
+                    </table>
+                    <!--  this section IS manipulated dynamically -->
+                    <p>
+                      <strong>Rule Nodes:</strong> <label><input type="radio" name="ruleson" value="on" checked>
+                        all</label> <label><input type="radio" name="ruleson" value="off"> none</label>
+                    </p>
+                    <table class="mono" id="rules-table">
+                    </table>
+                  </div>
+                  <!-- end trace-config -->
+                </div>
+              </div>
+            </section>
+
+            <!-- #### parser tab 2 - input to the parser #### -->
+            <section class="parser-tabcontent">
+              <div class="copy-header">
+                <div class="sub-band-container">
+                  | <a id="input-parse" class="inner-header" href="javascript:void(0)">Parse Input</a> 
+                  | <a id="input-parse-copy" class="inner-header" href="javascript:void(0)">Copy</a> 
+                  | <a id="input-parse-full" class="inner-header" href="javascript:void(0)">Full Screen</a> |
+                </div>
+              </div>
+              <div class="main-copy">
+
+                <div id="modal">
+                  <div id="modal-top">
+                  </div>
+                  <div id="modal-content">
+                  </div>
+                  <span id="modal-close" class="modal-cancel">&times;&nbsp;&nbsp;</span>
+                </div>
+
+                <textarea id="input-area" spellcheck="false" placeholder="Type or paste parser input here."></textarea>
+              </div>
+            </section>
+
+            <!-- #### parser tab 3 - the parsed phrases #### -->
+            <section class="parser-tabcontent">
+              <div class="copy-header">
+                <div class="sub-band-container">
+                  | <select id="ast-phrases" class="align-middle"></select>
+                  <a id="ast-phrases-1" class="inner-header" href="javascript:void(0)">&#9198;</a>
+                  <a id="ast-phrases-2" class="inner-header" href="javascript:void(0)">&#9204;</a>
+                  <a id="ast-phrases-3" class="inner-header" href="javascript:void(0)">phrases</a>
+                  <a id="ast-phrases-4" class="inner-header" href="javascript:void(0)">&#9205;</a>
+                  <a id="ast-phrases-5" class="inner-header" href="javascript:void(0)">&#9197;</a> 
+                  | <a id="ast-phrases-full" class="inner-header" href="javascript:void(0)">Full Screen</a> |
+                </div>
+              </div>
+              <div class="main-copy">
+                <iframe src="" id="phrases-frame"></iframe>
+              </div>
+            </section>
+
+            <!-- #### parser tab 4 - parser state #### -->
+            <section class="parser-tabcontent">
+              <div class="copy-header">
+                <div class="sub-band-container">
+                  | <a id="state-full" class="inner-header" href="javascript:void(0)">Full Screen</a> |
+                </div>
+              </div>
+              <div class="main-copy">
+                <div id="state-page"></div>
+              </div>
+            </section>
+
+            <!-- #### parser tab 5 - the parsing statistics #### -->
+            <section class="parser-tabcontent">
+              <div class="copy-header">
+                <div class="sub-band-container">
+                  | <a id="stats-full" class="inner-header" href="javascript:void(0)">Full Screen</a> |
+                </div>
+              </div>
+              <div class="main-copy">
+                <div id="stats-page"></div>
+              </div>
+            </section>
+
+            <!-- #### parser tab 6 - the trace #### -->
+            <section class="parser-tabcontent">
+              <div class="copy-header">
+                <div class="sub-band-container">
+                  | <a id="trace-full" class="inner-header" href="javascript:void(0)">Full Screen</a> |
+                  <a id="trace-tree" class="inner-header" href="javascript:void(0)">Show Tree</a> |
+                </div>
+              </div>
+              <div class="main-copy">
+                <iframe src="" id="trace-frame"></iframe>
+              </div>
+            </section>
+            <!-- #### END the parser tabs #### -->
+          </article>
+        </div> <!-- end tab 4 tabcontent -->
+        <!-- ####  END tab 4 - the generated parser with a GUI for testing it with an input string #### -->
+
+        <!-- ####  BEGIN tab 5 - the "about" page #### -->
+        <div class="tabcontent">
+          <div class="help-container">
+            <h2 id="about-apg">About APG</h2>
+
+            <p><strong>APG</strong> was originally developed to generate parsers directly from the Augmented Backus-Naur Form (ABNF) syntax. ABNF is the grammar syntax used to describe many, if not most, Internet technical specifications. It has been standardized by the <a href="https://www.ietf.org/">IETF</a> with <a href="https://tools.ietf.org/html/rfc5234">RFC 5234</a> and recently updated it with <a href="https://tools.ietf.org/html/rfc7405">RFC 7405</a>. <strong>APG</strong> has since grown to include additional features and the syntax for those features generate additional syntax elements creating a “superset” of ABNF or <a href="https://github.com/ldthomas/apg-js2/blob/master/SABNF.md">SABNF</a>.</p>
+
+            <p>Besides JavaScript, <strong>APG</strong> is available in the <a href="https://github.com/ldthomas/apg-6.3">C/C++</a> and <a href="https://github.com/ldthomas/apg-java">Java</a> languages. The C/C++ version has a small footprint, is fast and reliable and has been the parser of choice for a number of large Telecom companies. </p>
+
+            <p><strong>APG</strong> is the generator and parser that powers the new pattern-matching alternative to RegExp, <a href="https://github.com/ldthomas/apg-js2-exp">apg-exp</a>. <em>(For an introduction to <strong>apg-exp</strong>, see this sitepoint.com <a href="https://www.sitepoint.com/alternative-to-regular-expressions/">tutorial</a>.)</em></p>
+
+            <h2 id="about-the-author">About the Author</h2>
+
+            <p>The author lives on the Gulf Coast of Florida, USA, loves JavaScript and has 30+ years experience with software development of many kinds in many languages. In his spare time he loves hard-boiled detective novels, historical fiction and outdoor photography among many other things. He serves as a volunteer executive director on the boards of multiple, local charitable organizations.</p>
+
+            <p>February, 2017 <br>
+              Lowell D. Thomas</p>
+            <br>
+          </div>
+          <!-- end about.html -->
+        </div>
+        <!-- ####  END tab 5 - the "about" page #### -->
+
+        <!-- ####  BEGIN tab 6 - the help page #### -->
+        <div class="tabcontent">
+          <div class="help-container">
+            <h2 id="overviewtoc">Overview<span class="help-right"><a href="#help-top">↓toc</a></span></h2>
+
+            <p>This file, <strong>apg.html</strong>, is a static, stand-alone web page interface to <strong>APG</strong>, an ABNF Parser Generator. It can be launched in any modern web browser from a local file and requires no external resources. It provides easy visual access to the grammar, any grammar errors, the rules and their dependencies, the rule attributes and the generated parser. Additionally, once a parser has been successfully generated, facilities are provided for testing it against input strings of your choice. The user interface consists of a series of panels. Each panel presents one specific result or input opportunity. Access to the panels is through the main menu, the fixed dark blue bar across the top, and sub-menus that appear in the various panels. This User’s Guide will walk you through each of the menu and sub-menu items to explain how this <strong>APG</strong> interface works.</p>
+
+            <p>There are a couple of sub-menu items that appear on most panels consistently and those will be described here once and for all and not specifically referenced in the other panel specifics presented below.</p>
+
+            <ul>
+              <li><strong>Copy:</strong> Web browsers have no access to the local file system<sup>†</sup>, and since this is a stand-alone web page with no server behind it, there is no upload/download ability. Therefore, it is necessary to type or paste any input into a textarea. For output, to save the text in the textarea, it is necessary to copy and paste into a permanent file. This Copy menu action will copy the contents of the textarea onto the clipboard to facilitate this process.</li>
+              <li><strong>Full Screen:</strong> Often it is desirable to see the panel contents in a full screen view. This Full Screen action will pop up the panel contents in a new, full-screen view.</li>
+            </ul>
+
+            <p><sup>†</sup><em>The HTML5 <a href="https://dev.w3.org/2009/dap/file-system/pub/FileSystem/">FIle API</a> does not have sufficiently universal support here to be considered.</em></p>
+
+            <p><a id="help-top"></a></p>
+
+            <h2 id="table-of-contents">Table of Contents</h2>
+
+            <table>
+              <thead>
+                <tr>
+                  <th><strong><a href="#the-generatortoc">The Generator</a></strong></th>
+                  <th><strong><a href="#the-parsertoc">The Parser</a></strong></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody><tr>
+                  <td><a href="#overviewtoc">Overview</a></td>
+                  <td><a href="#parsertoc">Parser</a></td>
+                  <td><a href="#statetoc">State</a></td>
+                </tr>
+                <tr>
+                  <td><a href="#grammartoc">Grammar</a></td>
+                  <td><a href="#configuretoc">Configure</a></td>
+                  <td><a href="#statstoc">Stats</a></td>
+                </tr>
+                <tr>
+                  <td><a href="#rulestoc">Rules</a></td>
+                  <td><a href="#inputtoc">Input</a></td>
+                  <td><a href="#tracetoc">Trace</a></td>
+                </tr>
+                <tr>
+                  <td><a href="#attributestoc">Attributes</a></td>
+                  <td><a href="#phrasestoc">Phrases</a></td>
+                  <td><a href="#treetoc">Parse Tree</a></td>
+                </tr>
+              </tbody></table>
+
+
+            <h2 id="the-generatortoc">The Generator<span class="help-right"><a href="#help-top">↑toc</a></span></h2>
+
+            <p>The first panel is the generator itself. It presents a sub-menu and a textarea. </p>
+
+            <ul>
+              <li><strong>sub-menu:</strong> <br>
+                <ul><li><strong>Generate:</strong> Click this link to generate a parser from the grammar in the textarea. If the grammar has errors the <a href="#grammartoc">Grammar panel</a> will open automatically displaying an annotated version of the grammar with error messages. If there are no errors the <a href="#parsertoc">Parser panel</a> will open automatically, displaying the generated parser in a text area.</li></ul></li>
+              <li><strong>textarea:</strong> The grammar to be used by the generator is typed or pasted into the textarea.</li>
+            </ul>
+
+
+
+            <h3 id="grammartoc">Grammar<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>The generator will display an annotated version of the input grammar in this panel. If there are grammar errors, this panel will open automatically. However, the annotated grammar is always available here, with or without errors. The grammar is presented in tabular form with a row for each grammar line.</p>
+
+            <ul>
+              <li><strong>line no.:</strong> the line number of the grammar line displayed</li>
+              <li><strong>first char:</strong> the character number of the first character of the line</li>
+              <li><strong>length:</strong> the number of characters in the line</li>
+              <li><strong>text:</strong> the ASCII text of the line. The control characters tab<code>(\t, 0x09)</code>, linefeed<code>(\n, 0x0A)</code> and carriage return<code>(\r, 0x0D</code>) are displayed as <em><code>TAB</code></em>, <em><code>LF</code></em> and <em><code>CR</code></em>, respectively.</li>
+            </ul>
+
+            <p>If there are errors in the grammar, a second table will follow the first, with two lines for each error. The first is the same as described above except that a red marker will precede the location of the discovered error. The second line will give a brief description of the error type.</p>
+
+            <p><strong>APG</strong> generates four types of grammar errors.</p>
+
+            <ul>
+              <li><strong>invalid characters:</strong> The first step is to validate the input grammar’s character set. SABNF grammars accept only the printing ASCII character set, <code>0x20-7E</code> plus tab<code>(0x09)</code>, linefeed<code>(0x0A)</code> and carriage return<code>(0x0D)</code>. Any other character will generate a grammar error. Also, each line must end with a line end character<sup>†</sup>, including the last line. A missing line end will be reported as a part of this initial input validation. <em>(Note that forgetting or missing a last line end is a common and easy-to-make error and it may seem that it would be and easy fix to insert one on the user’s behalf. However, ABNF syntax requires a line end for each line and reporting this as an error rather than inserting one and proceeding is a considered feature, not an oversight.)</em></li>
+              <li><strong>syntax errors:</strong> The second step is to parse the SABNF grammar against its <a href="https://github.com/ldthomas/apg-js2/blob/master/resources/abnf-for-sabnf-grammar.bnf">ABNF definition</a>. If the input is not a valid SABNF grammar, errors will be reported here.</li>
+              <li><strong>semantic errors:</strong> The third step is to translate the Abstract Syntax Tree (AST) of the previous step into a parser object. Semantic, or translation errors, are reported here. A semantic error might be, for example, <code>%d57-48</code>. While this character range is syntactically correct, <code>min &gt; max</code> is a semantic error.</li>
+              <li><strong>attribute errors:</strong> Recursive-descent parsers cannot accept left-recursive, cyclic or infinite grammars. These are characterized, respectively, in the simple examples below. <br>
+                <code> <br>
+                  S = S "x" / "y" <br>
+                  S = S <br>
+                  S = "y" S <br>
+                </code> <br>
+                If any of these errors occur, the <a href="#attributestoc">Attributes panel</a> will automatically open with the errors appearing in the top lines, but the errors are also reported in the <a href="#grammartoc">Grammar panel</a>.</li>
+            </ul>
+
+            <p><a id="help-md-1"></a><sup>†</sup>Strict ABNF accepts only the carriage return, linefeed pair, <em><code>CRLF</code></em>, as a line end. However, because of the ways different browsers handle textareas, it is sometimes difficult or impossible to insert this line end pair into the grammar text. Therefore, the generator always follows the SABNF rules regarding line ends. That is, it accepts any of <em><code>CRLF</code></em>, <em><code>LF</code></em> or <em><code>CR</code></em> as a line end.</p>
+
+            <h3 id="rulestoc">Rules<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>This panel displays a table of all the rule and UDT names defined in the grammar. The first column is the rule index—the order in which the rules appear in the grammar. Clicking the <code>index</code> column label will toggle between ascending and descending ordering on the indexes.</p>
+
+            <p>The second column is the rule name. Clicking the <code>rule</code> column label will toggle between ascending and descending alphabetic ordering on the names.</p>
+
+            <p>The third column lists all of the rule names referenced by the named rule. The first entry, for each rule, is a <code>show/hide</code> link. This link will toggle the display of the rule dependencies on and off. For example, the first rule will usually reference all of the other rules. For large grammars this is a lot of uninteresting information that you may like to hide.</p>
+
+            <p>The sub-menu has links to show or hide all of the rule dependencies for all of the rules and UDTs simultaneously.</p>
+
+            <p>Note that UDTs, if present, are always listed below the rule names.</p>
+
+
+
+            <h3 id="attributestoc">Attributes<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>It is <a href="https://en.wikipedia.org/wiki/Left_recursion">well-known</a> that recursive-descent parsers cannot parse left-recursive grammars. Left-recursion is a fatal “attribute” of the grammar. <strong>APG</strong> looks for left-recursion and six other attributes as it analyses a grammar. These attributes are displayed here in table form. The seven attributes types, with simple examples of each are:</p>
+
+            <ol>
+              <li>left recursion (fatal)<br>
+                <code>S = S "x" / "y"</code></li>
+              <li>nested recursion (OK)<br>
+                <code>S = "a" S "b" / "y"</code></li>
+              <li>right recursion (OK)<br>
+                <code>S = "x" S / "y"</code></li>
+              <li>cyclic (fatal)<br>
+                <code>S = S</code></li>
+              <li>finite (fatal if not finite)<br>
+                <code>S = "y" S</code>  (defines only infinite strings)</li>
+              <li>empty (OK, but very important to know about)<br>
+                <code>S = "x" S / ""</code></li>
+              <li>not empty (OK)<br>
+                <code>S = "x" S / "y"</code></li>
+            </ol>
+
+            <p>Note that these are “aggregate” attributes, in that if the attribute is true it only means that it <em>can</em> be true, not that it will always be true for every input string. It also means that more than one attribute may be true for a given rule.</p>
+
+            <p>You may wonder why we would be interested in both <code>empty</code> and <code>not empty</code> as separate attributes. The importance is not apparent here, and won’t be explained in detail, but they are not mutually exclusive and both attributes turn out to be important to the algorithms that determine the recursiveness of a rule.</p>
+
+            <ul>
+              <li>first column, the rule index: the order in which the rules appear in the grammar. Clicking the “index” column label will toggle between ascending and descending ordering on the indexes.</li>
+              <li>second column, the rule name: Clicking the <code>rule</code> column label will toggle between ascending and descending ordering on the names.</li>
+              <li>third column, the recursive type: Clicking the <code>type</code> column label will toggle between ascending and descending ordering on the types.</li>
+              <li>the attribute columns: each has <code>yes/no</code> entries indicating whether the attribute is true or false. Clicking on the column heading will toggle a column sort on the <code>yes/no</code> values.</li>
+            </ul>
+
+            <p>Fatal attributes—left-recursion, cyclic, infinite—will appear in red. A checkbox will also appear at the top. When checked, rules with attribute errors will always remain at the top of the list.</p>
+
+            <p>Note that UDTs, if present, are always listed below the rule names. <br>
+              <a id="help-id-parser"></a></p>
+
+
+
+            <h2 id="the-parsertoc">The Parser<span class="help-right"><a href="#help-top">↑toc</a></span></h2>
+
+            <p>If the grammar is error-free, the Generator will be successful and this panel will open automatically. The generated parser will be in the textarea and can be copied and pasted into your parser application. Numerous <a href="https://github.com/ldthomas/apg-js2-examples">examples</a> are available to show you how to use this parser in both <a href="https://nodejs.org/api/">node.js</a> and web page applications. However, the parser can also be tested right here. The sub-menu has panels that let you try the parser against various input strings. You can view the phrases matched by the individual rules, look at the parsing statistics and a trace of the parser’s path through the parse tree. The trace is especially useful as a debugging tool for failed parses. The details are in the following discussions of the sub-menu panels.</p>
+
+            <p><em>Note that if the grammar has UDTs, parsing here will not be possible. In this case the parser is incomplete without the user-written code for the UDTs and there are no facilities here for code writing.</em></p>
+
+
+
+            <h3 id="parsertoc">Parser<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>This panel is a textarea containing the generated parser as a JavaScript function. You might want to change the variable name before you copy it into your application, but any other changes may invalidate the parser.</p>
+
+            <p>To test the parser, use the <a href="#inputtoc">Input</a> and <a href="#configuretoc">Configure</a> panels.</p>
+
+
+
+            <h3 id="configuretoc">Configure<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>This panel allows a degree of control over how the input string is interpreted and what tracing information is produced.</p>
+
+
+
+            <h4 id="input-mode">Input Mode:</h4>
+
+            <p>Only the printing ASCII characters, <code>0x20-7F</code> plus the control characters, tab<code>(0x09</code>, linefeed<code>(0x0A)</code> and carriage return<code>(0x0D)</code> are allowed in the input <code>&lt;textarea&gt;</code>. Any other character, in any mode, will be flagged as an input error. For non-ASCII characters, however, an escaped mode, as well as a base 64 option, are available.</p>
+
+            <ul>
+              <li>auto (default) - the application will scan the input to determine which mode to use. If all of the characters (ignoring white space and control characters \r and \n) are limited to the base 64 character set, a dialog will allow the user to select the underlying encoding. If any escape sequences are found, `x or `u, it will choose escaped mode. Otherwise, it will select ASCII mode.</li>
+              <li>ASCII characters only - the ASCII characters are interpreted literally. The grammar defining the parser in this case must only define ASCII sentences and phrases.</li>
+              <li>escaped characters - escaped characters can be used to generate a string of non-ASCII character codes as input to the parser. (See the <a href="#inputtoc">Input</a> section for a complete description.)</li>
+            </ul>
+
+
+
+            <h4 id="trace">Trace:</h4>
+
+            <ul>
+              <li>on - Turns tracing on. Opens further tracing configuration options.</li>
+              <li>off - (default) No tracing is done. The other tracing options are hidden.</li>
+            </ul>
+
+            <h4 id="display-mode">Display Mode:</h4>
+
+            <p>For each step the parser takes, the trace will display the portion of the string that the parser is trying to match. If any of the characters are non-ASCII, they will be displayed as Unicode values (<code>U+HH[HH[HHHH]]</code>) However, the trace strings may be displayed in other formats, which may be preferred, depending on the input.</p>
+
+            <ul>
+              <li>ASCII - (default) printing characters are displayed normally. Control characters are displayed as, <em><code>TAB</code></em>, <em><code>LF</code></em> and <em><code>CF</code></em>. All others are displayed in Unicode format, <em><code>U+HH[HH[HHHH]]</code></em>. The non-printing character representations are in small-cap italics to distinguish from possible conflicts with similar text.</li>
+              <li>decimal - all character codes are display as comma-delimited decimal integers.</li>
+              <li>hexidecimal - all character codes are displayed as comma-delimited hex integers of the form <code>\xHH[HH[HHHH]]</code>.</li>
+              <li>Unicode - all character codes are displayed as comma-delimited Unicode integers of the form <code>U+HH[HH[HHHH]]</code>.</li>
+              <li><code>H</code> - 0-9 or A-F</li>
+            </ul>
+
+
+
+            <h4 id="records-to-display">Records to Display:</h4>
+
+            <p>As the parser completes its recursive-descent traversal of the parse tree, it will visit each tree node twice, once going down and again on the way up. For large grammars and input strings this can amount to hundreds of thousands of node visits. The visits themselves are not very time consuming. Modern JavaScript engines perform well for large grammars. However, when tracing the parser, a trace record is generated for each node visit and the accumulation and display of these can easily overwhelm the capacity of the browser, slowing it or even grinding it to a virtual halt. The number of records can be limited with selections here.</p>
+
+            <ul>
+              <li>max records - The maximum number of records to retain.</li>
+              <li>last record - Normally, it is the last group of records that is of interest. If the parser fails, the failure will usually appear near the end of the parse. Use a negative value, <code>-1</code>, to indicate that the last to keep is to be the actual last record (unknown prior to parsing.) Use a positive number to indicate a specific value for the last saved record. Note that some boundary conditions apply.</li>
+            </ul>
+
+            <p>Suppose the total number of records generated is 10,000. </p>
+
+            <ul>
+              <li>example 1: Choosing <code>max records = 5000</code> and <code>last record = -1</code>  will display records 5001 - 10000.</li>
+              <li>example 2: Choosing <code>max records = 5000</code> and <code>last record = 9000</code>  will display records 4001 - 9000.</li>
+              <li>example 2: Choosing <code>max records = 10000</code> and <code>last record = 5000</code>  will display records 1-10000. The number of records takes precedence if the last record would limit the number of records to less than <code>max records</code> (or the total number of records, if less.)</li>
+            </ul>
+
+
+
+            <h4 id="operator-nodes">Operator Nodes:</h4>
+
+            <p>The node visits to the non-rule name nodes are often not of interest and trace records for these are not kept by default. However, these may be turned on by checking the boxes by the operator names. The <code>all/none</code> buttons can be used to turn them all on or off with one click. In either state, the check boxes can be selected individually.</p>
+
+            <ul>
+              <li>all - check all operator boxes</li>
+              <li>none - (default) uncheck all operator boxes</li>
+            </ul>
+
+            <h4 id="rule-nodes">Rule Nodes:</h4>
+
+            <p>Once a parser has been successfully generated from a grammar, all rule names defined by the grammar will appear here in alphabetical order. Often there are many rule names of little or no interest. For example, if an alphanumeric name is defined, the name is usually of interest, but the individual characters are not. The rule names to trace can be selected with the checkbox by each name.</p>
+
+            <ul>
+              <li>all - (default) check all rule name boxes</li>
+              <li>none - uncheck all rule name boxes</li>
+            </ul>
+
+            <p>Note that only the checked rules will appear in the phrases displayed in the <a href="#phrasestoc">Phrases panel</a>.</p>
+
+            <h3 id="inputtoc">Input<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>Testing the parser is as simple as typing or pasting an input string into the textarea and clicking <code>Parse Input</code>. The <a href="#phrasestoc">Phrases panel</a> will open up automatically to display the parsed phrases.</p>
+
+            <p>While an SABNF grammar can easily define sentences and phrases with arbitrary character codes, handling anything other than the printing ASCII characters in a <code>&lt;textarea&gt;</code> is tricky to impossible. <strong>apg.html</strong> offers two ways to handle non-ASCII characters—base 64 encoded and escaped format. <em>(To convert your data to either of these formats, see <a href="https://github.com/ldthomas/apg-conv">apg-conv</a>.)</em></p>
+
+            <h4 id="base-64">Base 64</h4>
+
+            <p>Data in any of the Unicode formats or 8-, 16- or 32-bit integer formats can be base 64 encoded. The base 64 data is purely ASCII and can be pasted into the input <code>&lt;textarea&gt;</code>. When <code>Parse Input</code> is clicked a dialog will open up to allow a selection of the underlying data format. The data will be base 64 decoded and replaced with an escaped format before parsing.</p>
+
+
+
+            <h4 id="escaped-format">Escaped Format</h4>
+
+            <p>In escaped character mode, escaping is identical to escaping in JavaScript strings except that the escape character is the grave accent (`). This choice was made because the backslash (\) causes annoying conflicts with actual JavaScript strings. Other special characters were rejected because they required the shift key. The escaped encoding rules are:</p>
+
+            <ul>
+              <li>`` – literal grave accent (`)</li>
+              <li>`xhh – 8-bit integer</li>
+              <li>`uhhhh – 16-bit integer</li>
+              <li>`u{h[hhhhhhh]} – 8- to 32-bit integer, i.e. 1 to 8 hexidecimal characters</li>
+              <li>h – hexadecimal digit, 0-9, a-f, or A-F</li>
+            </ul>
+
+            <p>In escaped character mode, using the grave accent (`) in any other context is an input error.</p>
+
+
+
+            <h4 id="parse-input">Parse Input</h4>
+
+            <p>This action will run the generated parser against the string in the <a href="#inputtoc">Input panel</a>. If the parse is successful, the <a href="#phrasestoc">Phrases panel</a> will open automatically, allowing you to peruse the matched phrases. If not successful, the <a href="#statetoc">State panel</a> will open automatically, displaying the failed state. While the State panel does have some useful information, you will probably need to turn on tracing and study the <a href="#tracetoc">Trace panel</a> to locate the error. It may be a grammar error; you didn’t accurately describe the intended phrases. Or it may be an error in the input string; it does not belong to the language, or set of sentences, defined by the grammar.</p>
+
+
+
+            <h3 id="phrasestoc">Phrases<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>This panel gives you the opportunity to peruse the phrases matched by the grammar’s rules. The sub-sub-menu has a drop-down combo box for selecting a rule name. The names are listed alphabetically, and the number in parenthesis is the number of phrases matched by the rule. Only rule names with one or more matched phrases appear. To further limit the rule names appearing here, see the <a href="#configuretoc">Configure panel</a>. Selecting a rule name will highlight the first matched phrase for that rule in the input string, scrolling the window if necessary. </p>
+
+            <p>Next to the combo box of names are the phrase controls. The have the following functions:</p>
+
+            <ul>
+              <li>⏮ - display the first matched phrase for this rule</li>
+              <li>⏴ - display the previously matched phrase for this rule</li>
+              <li><code>phrases</code> - display <em>all</em> matched phrases for this rule</li>
+              <li>⏵ - display the next matched phrase for this rule</li>
+              <li>⏭ - display the last matched phrase for this rule</li>
+            </ul>
+
+            <p>Note that the empty string often qualifies as a correctly matched phrase. In this case, a green epsilon, (<span class="apg-empty"><i>ε</i></span>), will be inserted to make the match visible.</p>
+
+
+
+            <h3 id="statetoc">State<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>This panel shows the state of the parse in tabular form. The main thing to note is that a successful parse requires that the entire string be matched. It is quite possible for the parser to find a matched sentence before it reaches the end of the string.</p>
+
+            <ul>
+              <li>success - true if the parser ends in a <code><span class="apg-match">MATCH</span></code> state <em>and</em> the entire string was matched.</li>
+              <li>state - <code><span class="apg-match">MATCH</span></code>, <code><span class="apg-empty">EMPTY</span></code>(a successful match of 0 characters), <code><span class="apg-nomatch">NOMATCH</span></code>.</li>
+              <li>string length - the number of characters in the sub-string <em>(the parser has facilities for parsing sub-strings, but no access to that facility is available here.)</em></li>
+              <li>matched length - the number of characters matched</li>
+              <li>max matched - the maximum number of characters matched. Approximate if the state is <code><span class="apg-nomatch">NOMATCH</span></code>.</li>
+              <li>max tree depth - maximum tree depth reached in the traversal of the parse tree.</li>
+              <li>node hits - the number of parse tree nodes processed</li>
+              <li>input length - the number of characters in the complete input string. (May be larger than <code>string length</code> above in the case of parsing a sub-string.)</li>
+              <li>sub-string begin - index of the first character of the sub-string to parse. (Not available here.)</li>
+              <li>sub-string end - index of the end character character of the sub-string to parse. (Not available here.)</li>
+              <li>sub-string length - number of characters in the sub-string (end - begin). (Not available here.)</li>
+            </ul>
+
+
+
+            <h3 id="statstoc">Stats<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p>This panel displays the parsing statistics. The first table shows the number of node hits for each of the 18 operator types. The columns show the  <code><span class="apg-empty">EMPTY</span></code>, <code><span class="apg-match">MATCH</span></code>, <code><span class="apg-nomatch">NOMATCH</span></code> and total hits. The second table shows the same information for the <code>RNM</code> operators broken down by individual rule names. The rule names are in descending order on the number of hits. Rules with 0 hits are not listed.</p>
+
+
+
+            <h3 id="tracetoc">Trace<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+
+            <p><strong>APG</strong> generates recursive-descent parsers. These are parsers that start at the root node of the syntax tree and proceed down the left-most branch of the tree until a terminal node is reached. The terminal node will attempt to match a character or phrase in the remaining input string. If the match is successful, the matched characters are removed from the remaining string and the parser proceeds back up the branch looking for further instructions (concatenation, repetition, etc.) from the nodes it finds along the way. If the match does not succeed, the parser will proceed up to the nearest <code>ALT</code>(Alternate) node and try the next alternate branch, if any. This continues until the parser has returned to the root node. If the entire string has been consumed, the parse is a success, otherwise, not. </p>
+
+            <p>For <strong>APG</strong> a terminal node is one of the node operators, <code>TLS</code>, <code>TBS</code> or <code>TRG</code>. <em>(User-Defined Terminals will not be discussed here.)</em> Only terminal nodes actually match and consume characters or phrases in the input string.</p>
+
+            <ul>
+              <li><code>TLS</code>—Terminal Literal String. This node attempts to make a case-insensitive match of a grammar-defined phrase to the remaining characters in the input string.</li>
+              <li><code>TBS</code>—Terminal Binary String. This node attempts to make a case-sensitive match of a grammar-defined phrase to the remaining characters in the input string.</li>
+              <li><code>TRG</code>—Terminal Range. This node attempts to match a character within a grammar-defined range to the leading character of the remaining the input string.</li>
+            </ul>
+
+            <p>Tracing is the process of generating a record of each node visit and this panel displays a text version of those records. The legend at the bottom of the Trace panel will explain the details of the data columns. See the <a href="#configuretoc">Configure panel</a> for instructions on how to control the selection of records displayed.  </p>
+
+            <p>The important thing to note is that as you read down from the first record, you see the path the parser has taken through the parse tree and which characters and phrases are matched or missed along the way.</p>
+
+            <p>While this can be illuminating in its own right, the chief purpose of the trace is to find where and what has gone wrong with a failed parse. It may be that the grammar does not correctly describe the language specification. Or it might be that the input string fails to match the language specification—or both, of course. It’s not automatic and a bit of an art. It may take some practice. But an examination of the trace usually pinpoints the problem quickly.</p>
+
+            <p>One tip though, if you don’t see the error right away with the default trace options, one of the first things to try is to check the <code>TLS</code>, <code>TBS</code> and <code>TRG</code> operators. Since these are the ones that actually consume input string characters they might be the first to allow you to see when and where a phrase is incorrectly missed or consumed.</p>
+
+            <h3 id="treetoc">Parse Tree<span class="help-right"><a href="#help-top">↑toc</a></span></h3>
+            
+<p>The Trace Panel has a “Show Tree” button in addition to “Full Screen”. 
+  When a trace is available, clicking this button will pop up a new window with a view of the parse tree generated from the trace records. 
+  While in theory, it can display any number of trace records, practically speaking, the tree gets very cluttered with more than a few hundred nodes. 
+  It might be advisable to limit the number of records to a 100 or less until you get the feel of what is displayed and how to navigate it.</p>
+
+<p>The tree is powered by <a href="https://github.com/d3/d3/blob/master/API.md">d3</a>. There are three sections to the display.</p>
+
+<ul>
+<li>The top rectangle is the control area. </li>
+<li>Below this is a rectangular area for the tree itself.</li>
+<li>Below his is another rectangular area for the input text string</li>
+</ul>
+
+<h4 id="the-control">the control</h4>
+
+<p>In the far left of the control area is a drop-down box to choose from pre-selected zoom levels.  <br>
+To the right are the branch display controls.</p>
+
+<p>⏮ this button returns the parse tree to the origin, displaying only the root node. <br>
+   ◀ this button will move the parse tree one branch to the left. <br>
+   <strong>slider</strong> click and drag the slider to smoothly follow the parse tree through the parsing process. <br>
+   ▶ this button will move the parse tree one branch to the right <br>
+   ⏭ this button will move the parse tree all the way to the right, displaying the entire tree. This is the default initial view.</p>
+
+
+<p>As each branch is displayed, its leaf node will be connected to the phrase that it matches. If no match, a red “x” (<span style="color: red;">✘</span>) will be displayed where the match attempt was made. If an empty string is matched a green epsilon (<span style="color: green;"><i><b>ε</b></i></span>) will be displayed at the location in the text where it was found.</p>
+
+<h4 id="the-nodes">the nodes</h4>
+
+<p>The nodes, as displayed indicate only the type of node it is. (A legend is given below.) However, there are several ways to get more information.</p>
+
+<ul>
+<li>fly over: when the cursor hovers over a node, a tool tip appears with detailed information about the node.</li>
+<li>ctrl+click on the node to toggle on and off a permanently displayed tool tip. When toggled on you can click and drag the tool tip around in the event that multiple tool tips interfere with one another.</li>
+<li>click on a node to toggle on and off a display of the phrase that the node matches.</li>
+</ul>
+
+<h4 id="zoom-and-pan">zoom and pan</h4>
+
+<p>To help navigate large trees, position the mouse any where, not on a node, and the mouse wheel will zoom the display in and out. Click any where, not on a node, and drag the view around.</p>
+
+<h4 id="phrases">phrases</h4>
+
+<p>When a phrase is highlighted, by clicking on a node or stepping through the tree with the step controls, the highlighted phrase will be dark blue with a rectangle around it and wispy lines will point out the node the phrase belongs to. Additionally, the prior matched text, if any, will be highlighted in light blue and the remaining, unmatched text, if any, will be visible but grayed out.</p>
+
+<p><i><b>Zooming Issue:</b> When zoomed to levels other than 100%, the highlight phrase box may not always encompass the actual phrase. The actual phrase, will in any case, be highlighted with dark blue, but zooming can cause the length of the text and the box position to jump around.</i></p>
+
+
+
+<h4 id="incomplete-trees">incomplete trees</h4>
+
+<p>Because the trace records may be truncated via the <code>maximum</code> and <code>last</code> records in the <a href="#configuretoc">Configuration Panel</a> there will not always be a complete parse tree. In fact, if the records are truncated fore and aft, there will not even be a root node. Partial trees are indicated in the following ways.</p>
+
+<ul>
+<li><em>missing initial records:</em> In this case, the root node (start rule) is known and its phrase matching status is known. Therefore, the root node and the right portion of the tree can be displayed. The left-most branch will be short-dashed in yellow. Any nodes for which the phrase information is unavailable will also be in yellow.</li>
+<li><em>missing final records:</em> Here again, the root node is available. However, its phrase information is not. The right-most tree branch will be long-dashed in yellow. Again, nodes with unknown phrase information will be yellow as well.</li>
+<li><em>missing initial and final records:</em> In this case the root node is not among the saved trace records. A dummy node is placed at the root and both the left-most and right-most branches are long-short-dashed in yellow. Again, nodes with unknown phrase information will be yellow as well.</li>
+</ul>
+
+<h4 id="node-type-legend">node type legend</h4>
+<p>original ABNF operators: <br>
+<code> <br>
+ALT - alternation <br>
+CAT - concatenation <br>
+REP - repetition <br>
+RNM - rule name <br>
+TRG - terminal range <br>
+TLS - terminal literal string (case insensitive) <br>
+TBS - terminal binary string (case sensitive) <br>
+</code></p>
+<p>super set SABNF operators: <br>
+<code> <br>
+UDT - user-defined terminal <br>
+AND - positive look ahead <br>
+NOT - negative look ahead <br>
+BKA - positive look behind <br>
+BKN - negative look behind <br>
+BKR - back reference <br>
+ABG - anchor - begin of input string <br>
+AEN - anchor - end of input string <br>
+</code></p>
+
+<blockquote>
+              <p>Written with <a href="https:stackedit.io/">StackEdit</a>.</p>
+            </blockquote>
+          </div>
+          <!-- ##### END Main Copy ##### -->
+        </div>
+
+        <!-- ##### BEGIN Footer ##### -->
+        <div id="footer">
+          <div class="copy-footer">
+            <div class="band-container">
+              Copyright &copy; 2016 <a href="http://www.coasttocoastresearch.com">Lowell D. Thomas</a>, all rights reserved
+              <div class="float-right">
+                Design by <a href="http://www.oswd.org/user/designs/id/3013">haran</a>
+              </div>
+            </div>
+            <!-- ##### END Footer ##### -->
+
+          </div>
+        </div>
+        <!-- end footer -->
+      </div>
+      <!-- end main-container -->
+    </div>
+  </body>
+</html>

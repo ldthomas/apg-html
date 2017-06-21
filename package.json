@@ -1,0 +1,21 @@
+{
+  "name": "apg-html",
+  "version": "1.0.0",
+  "description": "Web Page GUI for generating & testing APG parsers. New feature for viewing the trace as a d3.js-generated parse tree.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./bin/build.sh",
+    "build-apg": "./bin/build_apg.sh",
+    "build-tree": "./bin/build_tree.sh"
+  },
+  "author": "Lowell D. Thomas <lowell@coasttocoastresearch.com> (http://coasttocoastresearch.com)",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "d3": "^4.9.1",
+    "jquery": "^3.2.1",
+    "apg-api": "^1.0.0",
+    "apg-lib": "^3.2.0",
+    "apg-conv-api": "^1.0.0"
+  }
+}

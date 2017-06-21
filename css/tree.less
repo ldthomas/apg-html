@@ -1,0 +1,88 @@
+/* trace tree specializations */
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: @solor-paleryellow; 
+}
+svg {
+    position: relative;
+    background: @solor-paleryellow;
+}
+div.tooltip { 
+    position: absolute;     
+    text-align: left;     
+    width: 200px;          
+    height: 28px;         
+    padding: 2px;       
+    font: 12px sans-serif;    
+    background: @solor-paleryellow; 
+    border: 1px solid @solor-blue;    
+    border-radius: 8px;     
+    pointer-events: none; 
+    opacity: 0;    
+}
+#full {
+    /*overflow: hidden;*/
+}
+#svg-container{
+    /*overflow: hidden;*/
+    position: relative;
+}
+#control-container{
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    overflow: visible;
+    z-index: 1;
+    background: @solor-paleyellow;
+}
+#inner-control{
+    margin: 5px auto;
+    background: @solor-gray;
+    padding: 0;
+}
+.control-button{
+    border-radius: 5px;
+    border: 1px solid @solor-darkgray;
+    background: @solor-paleyellow;
+    color: @solor-darkgray;
+}
+@normalSize: 14px;
+@ctrlSize: 9px;
+tspan.normal {
+    font-size: @normalSize;
+}
+tspan.ctrl{
+    font-style: italic;
+    font-size: @ctrlSize;
+    opacity: 0.6;
+}
+tspan.prefix-normal{
+    font-size: @normalSize;
+    fill: lighten(@cl-lookbehind-match, 30%);
+}
+tspan.prefix-ctrl{
+    font-style: italic;
+    font-size: @ctrlSize;
+    fill: lighten(@cl-lookbehind-match, 30%);
+}
+tspan.phrase-normal{
+    font-size: @normalSize;
+    fill: @cl-match;
+}
+tspan.phrase-ctrl{
+    font-style: italic;
+    font-size: @ctrlSize;
+    fill: @cl-match;
+}
+tspan.suffix-normal{
+    font-size: @normalSize;
+    fill: lighten(@cl-black, 30%);
+}
+tspan.suffix-ctrl{
+    font-style: italic;
+    font-size: @ctrlSize;
+    fill: lighten(lighten(@cl-black, 30%), 30%);
+}
+
